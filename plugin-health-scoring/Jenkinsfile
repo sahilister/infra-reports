@@ -15,7 +15,7 @@ pipeline {
   }
 
   options {
-    buildDiscarder logRotator(daysToKeepStr: '90')
+    buildDiscarder logRotator(daysToKeepStr: '60')
     lock(resource: "plugin-health-scoring-${env.BRANCH_NAME}", inversePrecedence: true)
     timeout(time: 5, unit: 'MINUTES')
     disableConcurrentBuilds()
