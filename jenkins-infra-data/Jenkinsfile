@@ -12,7 +12,7 @@ pipeline {
     // This pipeline takes 1-2 minutes max to execute
     timeout(time: 10, unit: 'MINUTES')
     lock(resource: "jenkins-infra-data-${env.BRANCH_NAME}", inversePrecedence: true)
-    buildDiscarder logRotator(daysToKeepStr: '90')
+    buildDiscarder logRotator(daysToKeepStr: '14')
   }
   agent {
     label 'jnlp-linux-arm64'
